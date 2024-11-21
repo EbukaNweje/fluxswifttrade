@@ -41,7 +41,8 @@ button.onclick = async (event) => {
     password: password.value,
     gender: gender.value,
     country: country.value,
-    phoneNumber: phoneNumber.value
+    phoneNumber: phoneNumber.value,
+    fullNmaw:fullNmaw.value
   };
   
   console.log(data);
