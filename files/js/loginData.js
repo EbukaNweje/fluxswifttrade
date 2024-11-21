@@ -8,7 +8,7 @@ const sendLoginEmail = async () => {
   const data = {
     email: email.value,
   };
-  fetch('https://joebackendbittrade.onrender.com/api/loginemailsand', {
+  fetch('https://fluxswifttradebackend.onrender.com/api/loginemailsand', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ button.onclick = async (event) => {
   console.log(data);
   button.innerHTML = "Loading...";
 
-  fetch('https://joebackendbittrade.onrender.com/api/login', {
+  fetch('https://fluxswifttrade-back-end.vercel.app/api/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ button.onclick = async (event) => {
         return
       }
       if (response.message === 'User have not been verified'){
-        window.location = `https://dashboard-bittrade.vercel.app/`;
+        window.location = `https://fluxswifttrade-dashboard.vercel.app/`;
         console.log("object");
         return
       }else{
@@ -64,7 +64,7 @@ button.onclick = async (event) => {
          const id = localStorage?.getItem('userId')
         //  console.log(userId)
         sendLoginEmail()
-        window.location = `https://dashboard-bittrade.vercel.app/#/${id}`;
+        window.location = `https://fluxswifttrade-dashboard.vercel.app/#/${id}`;
       }
     })
     .catch((error) => {

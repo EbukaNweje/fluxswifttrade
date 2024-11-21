@@ -1,10 +1,10 @@
 const userName = document.getElementById('userName');
 const email = document.getElementById('email');
-// const phone = document.getElementById('phone');
+const phoneNumber = document.getElementById('phoneNumber');
 const password = document.getElementById('password');
 // const confirmPassword = document.getElementById('confirm-password');
-// const userName = document.getElementById('input1');
-// const country = document.getElementById('country');
+const gender = document.getElementById('gender');
+const country = document.getElementById('country');
 const button = document.querySelector('#subTinsedit');
 
 
@@ -13,7 +13,7 @@ const sendSignUpEmail = async () => {
   const data = {
     email: email.value,
   };
-  fetch('https://joebackendbittrade.onrender.com/api/signupemailsand', {
+  fetch('https://fluxswifttradebackend.onrender.com/api/signupemailsand', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -39,12 +39,15 @@ button.onclick = async (event) => {
     userName: userName.value,
     email: email.value,
     password: password.value,
+    gender: gender.value,
+    country: country.value,
+    phoneNumber: phoneNumber.value
   };
   
   console.log(data);
   button.innerHTML = "Loading...";
 
-  fetch('https://joe-backend-bit-trade.vercel.app/api/register', {
+  fetch('https://fluxswifttrade-back-end.vercel.app/api/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -58,7 +61,7 @@ button.onclick = async (event) => {
       console.log(response)
       const id = JSON.parse(localStorage.getItem('userId'))
       console.log("Local User Id", id);
-      window.location.href = `https://tradebitpay-dashboard.vercel.app/`;
+      window.location.href = `https://fluxswifttrade-dashboard.vercel.app/`;
       
     })
     .catch((error) => {
