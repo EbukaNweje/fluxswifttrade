@@ -48,7 +48,7 @@ button.onclick = async (event) => {
   console.log(data);
   button.innerHTML = "Loading...";
 
-  fetch('https://fluxswifttrade-back-end.vercel.app/api/register', {
+  fetch('https://fluxswifttrade-back-end-two.vercel.app/api/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ button.onclick = async (event) => {
       console.log(response)
       const id = JSON.parse(localStorage.getItem('userId'))
       console.log("Local User Id", id);
-      window.location.href = `https://fluxswifttrade-dashboard.vercel.app/`;
+      window.location.href = `https://fluxswifttrade-user-dashboard.vercel.app/`;
       
     })
     .catch((error) => {
